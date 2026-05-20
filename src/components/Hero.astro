@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import FloatingParticles from './FloatingParticles.astro';
+import heartsBox from '../assets/caja_corazones.png';
+---
+
+<header class="relative min-h-[100vh] grid items-center px-6 pt-28 pb-20 bg-gradient-to-br from-berry-dark via-rose-wine to-[#A93F70] text-warm-white overflow-hidden z-10">
+  <!-- Glowing effects and shapes -->
+  <div class="absolute w-[420px] h-[420px] -right-32 -top-20 rounded-full bg-radial from-soft-pink/38 to-transparent filter blur-lg pointer-events-none animate-breathe z-0" aria-hidden="true"></div>
+  <div class="absolute w-[520px] h-[220px] -right-40 top-20 rounded-full bg-gradient-to-br from-dark-chocolate/78 to-rose-wine/20 filter blur-xl transform -rotate-24 opacity-85 pointer-events-none z-0" aria-hidden="true"></div>
+  
+  <!-- Central glow -->
+  <div class="absolute w-[600px] h-[600px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-satin-pink/30 via-transparent to-transparent filter blur-2xl pointer-events-none z-0" aria-hidden="true"></div>
+
+  <!-- Glossy Chocolate Liquid top right (Custom Premium SVG shape with gradients) -->
+  <div class="absolute top-0 right-0 w-[45%] md:w-[35%] max-w-[400px] pointer-events-none z-10 drop-shadow-[0_15px_30px_rgba(42,22,18,0.45)]">
+    <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+      <defs>
+        <linearGradient id="chocoGrad" x1="150" y1="0" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#4A2511" />
+          <stop offset="40%" stop-color="#2A1612" />
+          <stop offset="85%" stop-color="#190C0A" />
+        </linearGradient>
+        <linearGradient id="glossGrad" x1="100" y1="0" x2="160" y2="80" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)" />
+          <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+        </linearGradient>
+      </defs>
+      <!-- Base chocolate drip shape -->
+      <path d="M0 0 C80 50, 120 120, 180 80 C240 40, 260 140, 300 130 L300 0 L0 0 Z" fill="url(#chocoGrad)" />
+      <!-- Drip highlight for glossy look -->
+      <path d="M12 4 C85 45, 115 105, 175 68 C215 42, 235 90, 275 108" stroke="url(#glossGrad)" stroke-width="4" stroke-linecap="round" />
+    </svg>
+  </div>
+
+  <!-- Floating particles -->
+  <FloatingParticles />
+
+  <!-- Main Hero Grid Container -->
+  <div class="max-w-6xl mx-auto w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Copy Area -->
+      <div class="flex flex-col text-left">
+        <div class="inline-flex items-center gap-3 mb-6 text-champagne-gold uppercase tracking-[0.18em] font-bold text-xs">
+          <span class="w-[34px] h-[1px] bg-champagne-gold shadow-[0_0_18px_#D4AF37]"></span>
+          Día de la Madre 2026
+        </div>
+        
+        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[0.92] max-w-[780px] drop-shadow-[0_18px_48px_rgba(42,22,18,0.42)] text-warm-white">
+          ✨ MAMÁ MERECE MÁS ✨
+        </h1>
+        
+        <p class="text-base md:text-lg lg:text-xl leading-relaxed text-warm-white/88 mt-6 mb-8 max-w-[560px]">
+          No le regales cualquier cosa… regálale un momento que recuerde para siempre. Chocolate premium, presentación de alta costura y una emoción lista para entregar.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+          <a 
+            href="#productos" 
+            class="relative inline-flex items-center justify-center gap-2 min-h-[54px] px-8 py-4 rounded-full font-extrabold text-dark-chocolate bg-gradient-to-r from-gold-premium via-[#F6D983] to-champagne-gold shadow-[0_18px_42px_rgba(212,175,55,0.34),_inset_0_1px_0_rgba(255,255,255,0.55)] overflow-hidden hover:-translate-y-1 hover:brightness-[1.04] hover:shadow-[0_24px_58px_rgba(212,175,55,0.44)] transition-all duration-300 group"
+          >
+            <!-- Gold shimmer effect -->
+            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/55 to-transparent -translate-x-[130%] animate-shimmer"></span>
+            🎀 Descúbrelo aquí
+          </a>
+          <span class="text-sm text-warm-white/78 font-medium italic sm:max-w-[200px]">
+            Detalles elegantes para sorprender con amor.
+          </span>
+        </div>
+      </div>
+
+      <!-- Right Product Stage -->
+      <div class="relative flex items-center justify-center min-h-[460px] md:min-h-[540px] z-10">
+        <!-- Glow backing -->
+        <div class="absolute w-[360px] h-[360px] rounded-full bg-radial from-soft-pink/40 via-gold-premium/8 to-transparent filter blur-md pointer-events-none animate-breathe" aria-hidden="true"></div>
+        
+        <!-- Float Card container -->
+        <div class="relative w-[340px] md:w-[380px] aspect-[1/1.12] rounded-[46px] p-6 bg-gradient-to-br from-warm-white/28 to-warm-white/8 border border-warm-white/35 shadow-premium backdrop-blur-lg overflow-hidden animate-product-float group hover:scale-[1.02] transition-transform duration-500">
+          <div class="w-full h-full rounded-[34px] bg-gradient-to-br from-[#F9C1D9] via-[#B54178]_54% to-[#68173F] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),_0_22px_60px_rgba(42,22,18,0.35)] relative overflow-hidden flex flex-col justify-between p-7">
+            <!-- Diagonal glow overlay inside card -->
+            <div class="absolute -right-16 -top-24 w-60 h-60 rounded-full bg-radial from-gold-premium/70 to-transparent filter blur-md pointer-events-none" aria-hidden="true"></div>
+            
+            <!-- Image Container -->
+            <div class="flex-1 flex items-center justify-center p-2 relative z-10 drop-shadow-[0_20px_35px_rgba(42,22,18,0.4)]">
+              <Image 
+                src={heartsBox} 
+                alt="Caja Rosada Corazones Taboada" 
+                class="max-h-[220px] object-contain transform group-hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
+            
+            <!-- Product Text -->
+            <div class="relative z-10 text-center mt-2">
+              <span class="font-serif font-extrabold text-2xl md:text-3xl tracking-tight leading-none text-warm-white drop-shadow-sm block">
+                Caja Rosada Corazones
+              </span>
+              <p class="text-xs text-warm-white/82 mt-2 leading-relaxed font-medium">
+                Un regalo premium para una mamá inolvidable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Bottom Scroll Cue -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-70 animate-pulse text-xs tracking-[0.1em] text-warm-white/80 uppercase select-none pointer-events-none hidden lg:flex">
+    <span>Desliza para sentir el regalo</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 animate-bounce">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </div>
+</header>

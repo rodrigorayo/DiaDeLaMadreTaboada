@@ -1,0 +1,37 @@
+---
+const phoneNumber = "59167998576";
+const whatsappMsg = "Hola,%20quiero%20sorprender%20a%20mam%C3%A1%20con%20Chocolates%20Taboada";
+---
+
+<div 
+  id="sticky-mobile-cta" 
+  class="fixed left-4 right-4 bottom-4 z-50 transform translate-y-24 opacity-0 transition-all duration-500 md:hidden pointer-events-none"
+>
+  <a 
+    href={`https://wa.me/${phoneNumber}?text=${whatsappMsg}`}
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="relative w-full min-h-[50px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-extrabold text-dark-chocolate bg-gradient-to-r from-gold-premium via-[#F6D983] to-champagne-gold shadow-[0_12px_30px_rgba(212,175,55,0.4)] overflow-hidden"
+  >
+    <!-- Shimmer glow -->
+    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[130%] animate-shimmer"></span>
+    💝 Sorprender a mamá
+  </a>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-mobile-cta');
+  
+  const handleScroll = () => {
+    if (window.scrollY > 450) {
+      stickyCta?.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      stickyCta?.classList.add('translate-y-0', 'opacity-100', 'pointer-events-all');
+    } else {
+      stickyCta?.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-all');
+      stickyCta?.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }
+  };
+
+  // Run on mount and scroll
+  window.addEventListener('scroll', handleScroll, { passive: true });
+</script>

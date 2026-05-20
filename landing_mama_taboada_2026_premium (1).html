@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mamá merece más | Chocolates Taboada</title>
+  <meta name="description" content="Este Día de la Madre sorprende a mamá con chocolates premium Taboada. Regálale un momento inolvidable, elegante y lleno de emoción." />
+  <meta property="og:title" content="Mamá merece más | Chocolates Taboada" />
+  <meta property="og:description" content="No le regales cualquier cosa. Regálale un momento que recuerde para siempre." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --berry-dark: #4B0F2F;
+      --rose-wine: #7A1E4D;
+      --satin-pink: #D97BA8;
+      --soft-pink: #F6D5E5;
+      --gold: #D4AF37;
+      --champagne: #D6B36A;
+      --warm-white: #FFF8FA;
+      --chocolate: #2A1612;
+      --glass: rgba(255, 248, 250, 0.16);
+      --shadow: 0 24px 70px rgba(42, 22, 18, 0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--warm-white);
+      color: var(--chocolate);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: 32px 20px 72px;
+      background:
+        radial-gradient(circle at 55% 42%, rgba(217, 123, 168, 0.55), transparent 30%),
+        radial-gradient(circle at 80% 15%, rgba(212, 175, 55, 0.28), transparent 24%),
+        linear-gradient(135deg, var(--berry-dark) 0%, var(--rose-wine) 58%, #A93F70 100%);
+      color: var(--warm-white);
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      right: -130px;
+      top: -80px;
+      background: radial-gradient(circle, rgba(246, 213, 229, 0.38), transparent 68%);
+      filter: blur(8px);
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    .hero::after {
+      width: 520px;
+      height: 220px;
+      right: -170px;
+      top: 74px;
+      background: linear-gradient(135deg, rgba(42, 22, 18, 0.78), rgba(122, 30, 77, 0.20));
+      filter: blur(22px);
+      transform: rotate(-24deg);
+      opacity: 0.85;
+    }
+
+    .floating-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.78);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+      animation: float 11s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { top: 18%; left: 8%; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 28%; left: 82%; animation-delay: 1s; width: 4px; height: 4px; }
+    .particle:nth-child(3) { top: 62%; left: 72%; animation-delay: 2s; }
+    .particle:nth-child(4) { top: 78%; left: 18%; animation-delay: 3s; width: 4px; height: 4px; }
+    .particle:nth-child(5) { top: 46%; left: 44%; animation-delay: 4s; width: 5px; height: 5px; }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 22px 20px;
+    }
+
+    .nav-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 1.1rem;
+    }
+
+    .nav-pill {
+      border: 1px solid rgba(255, 248, 250, 0.35);
+      background: rgba(255, 248, 250, 0.12);
+      backdrop-filter: blur(14px);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 0.86rem;
+      color: rgba(255, 248, 250, 0.88);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 56px;
+      align-items: center;
+      padding-top: 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--champagne);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      font-size: 0.76rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--champagne);
+      box-shadow: 0 0 18px var(--gold);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      line-height: 0.96;
+    }
+
+    h1 {
+      font-size: clamp(3.45rem, 9vw, 7.7rem);
+      letter-spacing: -0.055em;
+      max-width: 780px;
+      text-shadow: 0 18px 48px rgba(42, 22, 18, 0.42);
+    }
+
+    .hero-copy p {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.72;
+      max-width: 560px;
+      color: rgba(255, 248, 250, 0.88);
+      margin: 28px 0 34px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 16px 26px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #F6D983 48%, var(--champagne));
+      color: #3A1A08;
+      box-shadow: 0 18px 42px rgba(212, 175, 55, 0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.55) 45%, transparent 70%);
+      transform: translateX(-130%);
+      animation: shimmer 4.6s ease-in-out infinite;
+    }
+
+    .btn:hover { transform: translateY(-3px); filter: brightness(1.04); }
+    .btn-gold:hover { box-shadow: 0 24px 58px rgba(212, 175, 55, 0.44); }
+
+    .trust-note {
+      font-size: 0.92rem;
+      color: rgba(255, 248, 250, 0.78);
+    }
+
+    .product-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 560px;
+    }
+
+    .product-glow {
+      position: absolute;
+      width: 410px;
+      height: 410px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246, 213, 229, 0.5), rgba(212, 175, 55, 0.12), transparent 68%);
+      filter: blur(8px);
+      animation: breathe 7s ease-in-out infinite;
+    }
+
+    .hero-card-product {
+      width: min(390px, 88vw);
+      aspect-ratio: 1 / 1.13;
+      border-radius: 46px;
+      position: relative;
+      padding: 24px;
+      background:
+        linear-gradient(145deg, rgba(255, 248, 250, 0.28), rgba(255, 248, 250, 0.08)),
+        radial-gradient(circle at 40% 20%, rgba(212, 175, 55, 0.22), transparent 50%);
+      border: 1px solid rgba(255, 248, 250, 0.35);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: productFloat 6s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    .mock-product {
+      height: 100%;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 30% 24%, rgba(255,255,255,0.65), transparent 18%),
+        linear-gradient(145deg, #F9C1D9, #B54178 54%, #68173F);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 22px 60px rgba(42, 22, 18, 0.35);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      color: #FFF8FA;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mock-product::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      top: -90px;
+      right: -60px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.75), transparent 58%);
+      filter: blur(8px);
+    }
+
+    .mock-product .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.05rem;
+      font-weight: 800;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .mock-product .product-sub {
+      z-index: 1;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.55;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 250, 0.72);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    section { padding: 92px 20px; }
+
+    .why {
+      background:
+        radial-gradient(circle at 12% 10%, rgba(212, 175, 55, 0.16), transparent 24%),
+        linear-gradient(180deg, #FFF8FA 0%, #F6D5E5 100%);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.35rem, 5vw, 4.7rem);
+      color: var(--berry-dark);
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      margin: 18px auto 0;
+      font-size: 1.06rem;
+      line-height: 1.75;
+      color: rgba(42, 22, 18, 0.74);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit-card,
+    .product-card,
+    .testimonial-card {
+      border: 1px solid rgba(122, 30, 77, 0.12);
+      background: rgba(255, 248, 250, 0.72);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 20px 55px rgba(122, 30, 77, 0.10);
+      backdrop-filter: blur(14px);
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, var(--gold), #F7E3A6);
+      box-shadow: 0 14px 32px rgba(212, 175, 55, 0.24);
+    }
+
+    .benefit-card h3,
+    .product-card h3 {
+      color: var(--berry-dark);
+      font-size: 1.42rem;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+    }
+
+    .benefit-card p,
+    .product-card p,
+    .testimonial-card p {
+      color: rgba(42, 22, 18, 0.72);
+      line-height: 1.68;
+      margin: 12px 0 0;
+      font-size: 0.98rem;
+    }
+
+    .products {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(217, 123, 168, 0.22), transparent 26%),
+        linear-gradient(180deg, #F9E7EF 0%, #FFF8FA 100%);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(122, 30, 77, 0.16);
+    }
+
+    .product-img {
+      height: 250px;
+      border-radius: 24px;
+      margin-bottom: 22px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.7), transparent 28%),
+        linear-gradient(145deg, #F6D5E5, #C75C91 58%, #7A1E4D);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 18px 42px rgba(122, 30, 77, 0.18);
+    }
+
+    .product-img.gold {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.72), transparent 26%),
+        linear-gradient(145deg, #FFF2C5, #D4AF37 54%, #7A4F10);
+    }
+
+    .product-img.choco {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.28), transparent 26%),
+        linear-gradient(145deg, #7A1E4D, #4B0F2F 48%, #2A1612);
+    }
+
+    .product-box {
+      width: 170px;
+      height: 128px;
+      border-radius: 24px;
+      background: rgba(255, 248, 250, 0.32);
+      border: 1px solid rgba(255,255,255,0.42);
+      box-shadow: 0 26px 50px rgba(42, 22, 18, 0.26);
+      display: grid;
+      place-items: center;
+      font-family: 'Playfair Display', serif;
+      color: #FFF8FA;
+      font-weight: 800;
+      text-align: center;
+      padding: 18px;
+      line-height: 1.02;
+    }
+
+    .card-action {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--rose-wine);
+      font-weight: 800;
+    }
+
+    .emotional {
+      position: relative;
+      overflow: hidden;
+      color: var(--warm-white);
+      background:
+        radial-gradient(circle at 22% 20%, rgba(212, 175, 55, 0.22), transparent 24%),
+        radial-gradient(circle at 80% 66%, rgba(217, 123, 168, 0.25), transparent 30%),
+        linear-gradient(135deg, var(--berry-dark), #2A0A1D 72%, var(--chocolate));
+    }
+
+    .emotional .section-head h2 { color: var(--warm-white); }
+    .emotional .section-head p { color: rgba(255, 248, 250, 0.82); }
+
+    .quote-card {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 38px;
+      padding: clamp(28px, 6vw, 64px);
+      background: linear-gradient(145deg, rgba(255, 248, 250, 0.14), rgba(255, 248, 250, 0.05));
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.22);
+      text-align: center;
+    }
+
+    .quote-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: 1.08;
+      margin: 0 0 28px;
+      letter-spacing: -0.045em;
+    }
+
+    .cta-strip {
+      padding: 82px 20px;
+      background: linear-gradient(180deg, #FFF8FA 0%, #F6D5E5 100%);
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 940px;
+      margin: 0 auto;
+      border-radius: 42px;
+      padding: clamp(32px, 6vw, 70px);
+      background:
+        radial-gradient(circle at 18% 16%, rgba(212, 175, 55, 0.20), transparent 25%),
+        linear-gradient(135deg, #FFF8FA, #F4CADC);
+      box-shadow: 0 30px 90px rgba(122, 30, 77, 0.14);
+      border: 1px solid rgba(122, 30, 77, 0.10);
+    }
+
+    .cta-box h2 {
+      color: var(--berry-dark);
+      font-size: clamp(2.35rem, 5vw, 4.5rem);
+      letter-spacing: -0.045em;
+    }
+
+    .cta-box p {
+      max-width: 620px;
+      margin: 18px auto 28px;
+      color: rgba(42, 22, 18, 0.72);
+      line-height: 1.72;
+    }
+
+    .testimonials {
+      background: var(--warm-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .stars { color: var(--gold); letter-spacing: 0.08em; margin-bottom: 14px; }
+
+    .premium-close {
+      padding: 88px 20px 42px;
+      text-align: center;
+      color: var(--warm-white);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.20), transparent 35%),
+        linear-gradient(180deg, var(--berry-dark), var(--chocolate));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-close::after {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 120px;
+      left: -10%;
+      bottom: -42px;
+      background: linear-gradient(90deg, rgba(42, 22, 18, 0.4), rgba(122, 30, 77, 0.6), rgba(42, 22, 18, 0.4));
+      filter: blur(16px);
+      border-radius: 50%;
+    }
+
+    .premium-close h2 {
+      font-size: clamp(2.5rem, 6vw, 5.4rem);
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .premium-close p {
+      color: rgba(255, 248, 250, 0.75);
+      margin-bottom: 34px;
+    }
+
+    .footer-brand {
+      position: relative;
+      z-index: 1;
+      padding-top: 42px;
+      color: rgba(255, 248, 250, 0.56);
+      font-size: 0.9rem;
+    }
+
+    .sticky-mobile-cta {
+      display: none;
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 10;
+    }
+
+    .sticky-mobile-cta .btn { width: 100%; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.45; }
+      50% { transform: translateY(-28px) translateX(12px); opacity: 1; }
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(0.96); opacity: 0.75; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0%, 55% { transform: translateX(-130%); }
+      80%, 100% { transform: translateX(130%); }
+    }
+
+    @keyframes productFloat {
+      0%, 100% { transform: translateY(0) rotate(-1.2deg); }
+      50% { transform: translateY(-18px) rotate(1.2deg); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .products-grid,
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { min-height: auto; padding-bottom: 56px; }
+      .hero-grid { gap: 28px; padding-top: 92px; }
+      .product-stage { min-height: 430px; }
+      .hero-card-product { width: min(330px, 86vw); }
+      .scroll-cue { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-pill { display: none; }
+      .hero { padding-left: 16px; padding-right: 16px; }
+      .hero-copy p { margin: 22px 0 26px; }
+      .cta-row .btn { width: 100%; }
+      .trust-note { text-align: center; width: 100%; }
+      section { padding: 68px 16px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .benefit-card, .testimonial-card { padding: 24px; border-radius: 26px; }
+      .products-grid { gap: 18px; }
+      .product-img { height: 220px; }
+      .sticky-mobile-cta { display: block; }
+      body { padding-bottom: 82px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <div class="brand">Chocolates Taboada</div>
+        <a class="nav-pill" href="#productos">Ver regalos destacados</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="floating-particles" aria-hidden="true">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Día de la Madre 2026</span>
+          <h1>Mamá merece más</h1>
+          <p>No le regales cualquier cosa… regálale un momento que recuerde para siempre. Chocolate premium, presentación elegante y una emoción lista para entregar.</p>
+          <div class="cta-row">
+            <a class="btn btn-gold" href="#productos">Descúbrelo aquí →</a>
+            <span class="trust-note">Detalles elegantes para sorprender con amor.</span>
+          </div>
+        </div>
+
+        <div class="product-stage" aria-label="Producto protagonista">
+          <div class="product-glow" aria-hidden="true"></div>
+          <div class="hero-card-product">
+            <div class="mock-product">
+              <div>
+                <div class="product-name">Caja Rosada<br/>Corazones</div>
+                <div class="product-sub">Un regalo premium para una mamá inolvidable.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue">Desliza para sentir el regalo</div>
+    </header>
+
+    <section class="why" id="porque">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color: var(--rose-wine); justify-content: center;">Más que chocolate</span>
+          <h2>Un detalle que emociona antes de abrirse</h2>
+          <p>La landing no vende una caja: vende el instante en que mamá siente que pensaron en ella con cariño, elegancia y buen gusto.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon">✦</div>
+            <h3>Regalos que emocionan</h3>
+            <p>Mensajes y presentaciones pensadas para convertir el regalo en una experiencia afectiva.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">◆</div>
+            <h3>Chocolate premium</h3>
+            <p>Una percepción superior desde el primer vistazo: brillo, textura, empaque y detalle.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">◐</div>
+            <h3>Presentación elegante</h3>
+            <p>Diseño visual limpio, sofisticado y memorable para diferenciarse de un regalo común.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">♥</div>
+            <h3>Momentos inolvidables</h3>
+            <p>No es solo la compra: es la historia que el cliente quiere regalar en el Día de la Madre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="productos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color: var(--rose-wine); justify-content: center;">Regalos destacados</span>
+          <h2>Elige el detalle perfecto para mamá</h2>
+          <p>Máximo impacto visual, pocos productos y mucho aire premium. La decisión debe sentirse fácil, elegante y emocional.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-img">
+              <div class="product-box">Caja Rosada<br/>Corazones</div>
+            </div>
+            <h3>Eres una mamá increíble</h3>
+            <p>Más que chocolate… una forma elegante de decir “gracias por todo”.</p>
+            <a class="card-action" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20sorprender%20a%20mam%C3%A1%20con%20la%20Caja%20Rosada%20Corazones" target="_blank" rel="noopener">Quiero este detalle →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img gold">
+              <div class="product-box">Caja Surtida<br/>Rellenos</div>
+            </div>
+            <h3>Un recuerdo inolvidable</h3>
+            <p>Una selección especial para sorprender con sabor, presentación y emoción.</p>
+            <a class="card-action" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20sorprender%20a%20mam%C3%A1%20con%20la%20Caja%20Surtida%20Rellenos" target="_blank" rel="noopener">Quiero este detalle →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img choco">
+              <div class="product-box">Detalle<br/>Premium</div>
+            </div>
+            <h3>Elegancia para sorprender</h3>
+            <p>El regalo ideal cuando quieres resolver rápido, pero sin perder categoría.</p>
+            <a class="card-action" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20un%20detalle%20premium%20para%20mam%C3%A1" target="_blank" rel="noopener">Quiero este detalle →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="emotional">
+      <div class="container">
+        <div class="quote-card">
+          <p>Hay personas que merecen más que palabras.</p>
+          <span>Este Día de la Madre… regálale un recuerdo.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip" id="comprar">
+      <div class="cta-box">
+        <h2>Resuelve el regalo con elegancia</h2>
+        <p>Haz que mamá reciba algo que se vea especial, se sienta premium y se recuerde con cariño.</p>
+        <a class="btn btn-gold" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20sorprender%20a%20mam%C3%A1%20con%20Chocolates%20Taboada" target="_blank" rel="noopener">Quiero sorprender a mamá →</a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color: var(--rose-wine); justify-content: center;">Validación emocional</span>
+          <h2>Se siente como un regalo internacional</h2>
+          <p>La prueba social debe reforzar confianza sin romper la estética premium.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“Mi mamá amó el detalle. Se veía muy fino y especial.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“La presentación parecía de marca internacional. Muy elegante.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“Fue el regalo perfecto: bonito, emocional y fácil de comprar.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="premium-close">
+      <div class="container">
+        <h2>Porque mamá merece más</h2>
+        <p>Chocolates Taboada · Más que chocolate, detalles que emocionan.</p>
+        <a class="btn btn-gold" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20comprar%20un%20regalo%20para%20mam%C3%A1" target="_blank" rel="noopener">Comprar por WhatsApp →</a>
+        <div class="footer-brand">© 2026 Chocolates Taboada. Campaña Día de la Madre.</div>
+      </div>
+    </section>
+
+    <div class="sticky-mobile-cta">
+      <a class="btn btn-gold" href="https://wa.me/59100000000?text=Hola%2C%20quiero%20sorprender%20a%20mam%C3%A1%20con%20Chocolates%20Taboada" target="_blank" rel="noopener">Sorprender a mamá →</a>
+    </div>
+  </main>
+</body>
+</html>

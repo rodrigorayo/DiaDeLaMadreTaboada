@@ -1,0 +1,40 @@
+---
+const phoneNumber = "59167998576";
+const whatsappMsg = "Hola,%20quiero%20sorprender%20a%20mam%C3%A1%20con%20Chocolates%20Taboada";
+---
+
+<section id="comprar" class="relative py-20 px-6 bg-gradient-to-b from-warm-white to-soft-pink/60 text-center overflow-hidden">
+  <!-- Glowing visual elements -->
+  <div class="absolute w-[350px] h-[350px] left-[10%] top-[10%] rounded-full bg-radial from-gold-premium/8 to-transparent filter blur-2xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute w-[400px] h-[400px] right-[5%] bottom-[10%] rounded-full bg-radial from-satin-pink/10 to-transparent filter blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-4xl mx-auto relative z-10">
+    <!-- CTA Card -->
+    <div class="rounded-[42px] px-6 py-14 md:p-16 border border-rose-wine/10 bg-gradient-to-br from-warm-white to-[#F4CADC] shadow-[0_30px_90px_rgba(122,30,77,0.14)] relative overflow-hidden">
+      <!-- Inner Glow -->
+      <div class="absolute w-72 h-72 -left-20 -top-20 rounded-full bg-radial from-gold-premium/20 to-transparent filter blur-md pointer-events-none" aria-hidden="true"></div>
+      
+      <h2 class="font-serif text-3xl md:text-5xl font-extrabold tracking-tight text-berry-dark leading-tight relative z-10">
+        Resuelve el regalo con elegancia
+      </h2>
+      
+      <p class="text-sm md:text-base leading-relaxed text-dark-chocolate/72 max-w-xl mx-auto mt-5 mb-8 relative z-10">
+        Haz que mamá reciba algo que se vea verdaderamente especial, se sienta premium desde el empaque y se recuerde con el cariño de un gran momento.
+      </p>
+      
+      <!-- Big Golden CTA Button -->
+      <div class="relative z-10 inline-block">
+        <a 
+          href={`https://wa.me/${phoneNumber}?text=${whatsappMsg}`}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="relative inline-flex items-center justify-center gap-2 min-h-[56px] px-10 py-4 rounded-full font-extrabold text-dark-chocolate bg-gradient-to-r from-gold-premium via-[#F6D983] to-champagne-gold shadow-[0_18px_42px_rgba(212,175,55,0.3),_inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden hover:-translate-y-1 hover:brightness-[1.04] hover:shadow-[0_24px_58px_rgba(212,175,55,0.4)] transition-all duration-300 group"
+        >
+          <!-- Shimmer shine effect -->
+          <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/55 to-transparent -translate-x-[130%] group-hover:animate-shimmer"></span>
+          💝 Quiero sorprender a mamá
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

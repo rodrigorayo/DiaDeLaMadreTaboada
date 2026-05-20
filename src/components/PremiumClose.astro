@@ -1,0 +1,46 @@
+---
+const phoneNumber = "59167998576";
+const whatsappMsg = "Hola,%20quiero%20comprar%20un%20regalo%20para%20mam%C3%A1";
+---
+
+<section class="relative py-24 px-6 text-center text-warm-white bg-gradient-to-b from-berry-dark to-dark-chocolate overflow-hidden z-10">
+  <!-- Glowing visual highlight at top and bottom -->
+  <div class="absolute w-[60%] h-[120px] left-[20%] -top-[60px] bg-gradient-to-r from-dark-chocolate/40 via-rose-wine/60 to-dark-chocolate/40 filter blur-xl rounded-full pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute w-[120%] h-[120px] -left-[10%] -bottom-[42px] bg-gradient-to-r from-dark-chocolate/40 via-rose-wine/60 to-dark-chocolate/40 filter blur-2xl rounded-full pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute w-[400px] h-[400px] left-1/2 top-[30%] -translate-x-1/2 rounded-full bg-radial from-gold-premium/6 to-transparent filter blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Minimal floating gold particles for footer closing -->
+  <div class="absolute inset-0 pointer-events-none opacity-40 z-0">
+    <span class="absolute w-1.5 h-1.5 rounded-full bg-gold-premium left-[20%] top-[40%] animate-pulse"></span>
+    <span class="absolute w-1 h-1 rounded-full bg-gold-premium right-[30%] top-[30%] animate-pulse" style="animation-delay: 2s;"></span>
+    <span class="absolute w-2 h-2 rounded-full bg-gold-premium left-[45%] bottom-[40%] animate-pulse" style="animation-delay: 1.5s;"></span>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+    
+    <h2 class="font-serif text-4xl md:text-6xl font-extrabold tracking-tight leading-none mb-4 drop-shadow-[0_10px_25px_rgba(0,0,0,0.3)]">
+      Porque mamá merece más
+    </h2>
+    
+    <p class="text-sm md:text-base text-warm-white/75 mb-10 max-w-lg">
+      Chocolates Taboada · Más que chocolate, detalles que emocionan.
+    </p>
+    
+    <!-- CTA Button -->
+    <a 
+      href={`https://wa.me/${phoneNumber}?text=${whatsappMsg}`}
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="relative inline-flex items-center justify-center gap-2 min-h-[54px] px-8 py-4 rounded-full font-extrabold text-dark-chocolate bg-gradient-to-r from-gold-premium via-[#F6D983] to-champagne-gold shadow-[0_18px_42px_rgba(212,175,55,0.25),_inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden hover:-translate-y-1 hover:brightness-[1.04] hover:shadow-[0_24px_58px_rgba(212,175,55,0.35)] transition-all duration-300 group"
+    >
+      <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/55 to-transparent -translate-x-[130%] group-hover:animate-shimmer"></span>
+      Comprar por WhatsApp →
+    </a>
+    
+    <!-- Footer Brand Metadata -->
+    <div class="mt-20 pt-8 border-t border-warm-white/10 w-full text-xs text-warm-white/50 tracking-wider">
+      © 2026 Chocolates Taboada. Campaña Día de la Madre. Todos los derechos reservados.
+    </div>
+    
+  </div>
+</section>

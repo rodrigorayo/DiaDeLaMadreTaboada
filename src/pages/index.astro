@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import WhyTaboada from '../components/WhyTaboada.astro';
+import FeaturedProducts from '../components/FeaturedProducts.astro';
+import EmotionalQuote from '../components/EmotionalQuote.astro';
+import CTASection from '../components/CTASection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import PremiumClose from '../components/PremiumClose.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+---
+
+<Layout>
+  <!-- Navigation Header -->
+  <Nav />
+
+  <main>
+    <!-- Hero Banner with floating main product -->
+    <Hero />
+
+    <!-- Brand emotional connection benefits -->
+    <WhyTaboada />
+
+    <!-- Curated products block -->
+    <FeaturedProducts />
+
+    <!-- Interstitial emotional quote -->
+    <EmotionalQuote />
+
+    <!-- Bold direct CTA purchase block -->
+    <CTASection />
+
+    <!-- Social proof and reviews -->
+    <Testimonials />
+
+    <!-- Footer summary and final contact -->
+    <PremiumClose />
+  </main>
+
+  <!-- Mobile-first bottom action bar -->
+  <StickyCTA />
+</Layout>

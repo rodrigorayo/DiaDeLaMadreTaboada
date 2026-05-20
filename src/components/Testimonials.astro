@@ -1,0 +1,61 @@
+---
+const testimonials = [
+  {
+    stars: "★★★★★",
+    text: "“Mi mamá amó el detalle. Se veía muy fino, delicado y realmente especial.”",
+    author: "Sofía M."
+  },
+  {
+    stars: "★★★★★",
+    text: "“La presentación parecía de una marca internacional de lujo. Muy elegante.”",
+    author: "Andrés K."
+  },
+  {
+    stars: "★★★★★",
+    text: "“Fue el regalo perfecto: hermoso visualmente, muy emotivo y facilísimo de comprar.”",
+    author: "Valeria R."
+  }
+];
+---
+
+<section class="py-24 px-6 bg-warm-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-flex items-center justify-center gap-2 mb-4 text-rose-wine uppercase tracking-[0.16em] font-bold text-xs">
+        <span class="w-2 h-2 rounded-full bg-rose-wine"></span>
+        Validación emocional
+      </span>
+      <h2 class="font-serif text-4xl md:text-5xl font-extrabold tracking-tight text-berry-dark leading-tight">
+        Se siente como un regalo internacional
+      </h2>
+      <p class="text-sm md:text-base leading-relaxed text-dark-chocolate/75 mt-5">
+        Quienes ya han sorprendido con Chocolates Taboada coinciden en la extraordinaria calidad y finura del regalo.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonials.map((t) => (
+        <article class="p-8 rounded-[30px] border border-rose-wine/10 bg-warm-white/60 shadow-card backdrop-blur-md relative overflow-hidden hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+          <div class="absolute inset-0 rounded-[30px] bg-gradient-to-br from-white/10 to-transparent pointer-events-none" aria-hidden="true"></div>
+          
+          <!-- Stars -->
+          <div class="text-gold-premium tracking-[0.08em] text-lg mb-4 select-none">
+            {t.stars}
+          </div>
+          
+          <!-- Quote -->
+          <p class="text-sm md:text-base text-dark-chocolate/78 italic leading-relaxed">
+            {t.text}
+          </p>
+          
+          <!-- Author -->
+          <span class="block text-xs font-bold text-rose-wine/80 tracking-wider uppercase mt-5">
+            — {t.author}
+          </span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
