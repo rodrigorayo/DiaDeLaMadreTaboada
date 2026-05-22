@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -78,7 +78,7 @@
     <!-- NAVBAR PREMIUM TRANSPARENTE -->
     <!-- ===================================================== -->
   </head>
-  <body> 
+  <body class="overflow-x-hidden"> 
   <nav
   class="fixed top-0 left-0 w-full z-[999] transition-all duration-500
          bg-white/8 backdrop-blur-[14px] border-b border-white/10
@@ -117,8 +117,7 @@
         <a
           href="#productos"
           class="group inline-flex items-center gap-3
-                 px-7 py-4 text-[0.95rem]
-                 hover:px-6 hover:py-3 hover:text-sm
+                 px-5 py-3 sm:px-7 sm:py-4 text-sm sm:text-[0.95rem]
                  rounded-full
                  bg-[linear-gradient(145deg,#F4D6C8,#EAC0B4)]
                  text-[#5B2A22]
@@ -129,8 +128,11 @@
                  relative overflow-hidden"
         >
 
-          <span class="relative z-10">
+          <span class="relative z-10 hidden sm:inline">
             Ver regalos destacados
+          </span>
+          <span class="relative z-10 sm:hidden">
+            Ver regalos
           </span>
 
           <!-- brillo -->
@@ -645,7 +647,7 @@
   </section>
 
   <section
-    class="relative bg-gradient-to-br from-[#fcfaf8] via-[#f7edf0] to-[#fcfaf8] py-16 pb-24 border-t border-rose-100/50 overflow-hidden"
+    class="relative bg-gradient-to-br from-[#fcfaf8] via-[#f7edf0] to-[#fcfaf8] py-10 md:py-16 border-t border-rose-100/50 overflow-hidden"
   >
     <div
       class="absolute inset-0 bg-gradient-to-br from-[#fcfaf8] via-[#f7edf0] to-[#fcfaf8]"
@@ -657,10 +659,10 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6">
-      <div class="mb-24">
-        <div class="flex justify-start mb-14">
+      <div class="mb-10 md:mb-24">
+        <div class="flex justify-start mb-8 md:mb-14">
           <h2
-            class="text-4xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
+            class="text-3xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
           >
             Cajas Especiales
             <!-- lÃ­nea elegante -->
@@ -972,10 +974,10 @@
           </div>
         </div>
       </div>
-      <div class="mb-24">
-        <div class="flex justify-start mb-14">
+      <div class="mb-10 md:mb-24">
+        <div class="flex justify-start mb-8 md:mb-14">
           <h2
-            class="text-4xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
+            class="text-3xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
           >
             Tabletas Premium
             <span
@@ -988,9 +990,9 @@
           class="group relative bg-[#f8edf0]/90 rounded-[2rem] p-6 border border-rose-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(251,207,232,0.4)] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-16 before:h-16 before:bg-white before:rounded-full before:blur-2xl before:opacity-10 group-hover:before:opacity-40 group-hover:before:w-32 group-hover:before:h-32"
         >
           <!-- GALERÃA DE IMÃGENES -->
-          <div class="grid grid-cols-3 gap-3 mb-6 relative z-10">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 relative z-10">
             <div
-              class="h-44 flex items-center justify-center rounded-2xl overflow-hidden"
+              class="h-44 sm:h-44 flex items-center justify-center rounded-2xl overflow-hidden"
             >
               <img
                 src="/img/tableta1.png"
@@ -1060,10 +1062,10 @@
             </button>
           </div>
         </div>
-        <div>
-          <div class="flex justify-start mb-14">
+        <div class="mt-10 md:mt-0">
+          <div class="flex justify-start mb-8 md:mb-14">
             <h2
-              class="text-4xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
+              class="text-3xl md:text-5xl font-elegante font-bold text-[#5b2d39] relative inline-block tracking-tight"
             >
               Detalles que enamoran
               <span
@@ -1168,8 +1170,9 @@
         </div>
       </div>
     </div>
+  </section>
 
-    <section class="relative overflow-hidden py-24 md:py-32 bg-[#2b0f17]">
+  <section class="relative overflow-hidden py-16 md:py-32 bg-[#2b0f17]">
       <!-- fondo elegante -->
       <div class="absolute inset-0">
         <div
@@ -1255,8 +1258,8 @@
           </button>
         </div>
       </div>
-    </section>
-    <footer
+  </section>
+  <footer
   class="relative bg-[linear-gradient(135deg,#140905,#2a120c,#1b0b07)] overflow-hidden border-t border-[#7a5228]/30"
 >
   <!-- glow -->
@@ -1454,5 +1457,5 @@
     </div>
   </div>
 </footer>
-    </body>
+  </body>
 </html>
