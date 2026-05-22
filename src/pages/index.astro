@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -1439,5 +1439,17 @@
     </div>
   </div>
 </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+          if (button.textContent.toLowerCase().includes('comprar') || button.textContent.toLowerCase().includes('sorprender')) {
+            button.addEventListener('click', () => {
+              window.open('https://wa.me/59164278427?text=Hola,%20quiero%20comprar%20un%20regalo%20para%20mam%C3%A1', '_blank');
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
