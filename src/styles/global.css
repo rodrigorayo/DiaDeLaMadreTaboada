@@ -43,6 +43,16 @@
   80%, 100% { transform: translateX(130%); }
 }
 
+/* Reset para eliminar márgenes del navegador */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Custom CSS Scrollbar and utility styles */
 html {
   scroll-behavior: smooth;

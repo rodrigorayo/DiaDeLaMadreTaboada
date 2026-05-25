@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
 
+    <style>html,body{margin:0;padding:0;}</style>
     <script is:inline src="https://cdn.tailwindcss.com"></script>
     <script is:inline>
       tailwind.config = {
@@ -78,7 +79,7 @@
     <!-- NAVBAR PREMIUM TRANSPARENTE -->
     <!-- ===================================================== -->
   </head>
-  <body class="overflow-x-hidden"> 
+  <body class="overflow-x-hidden m-0 p-0">
   <nav
   class="fixed top-0 left-0 w-full z-[999] transition-all duration-500
          bg-white/8 backdrop-blur-[14px] border-b border-white/10
@@ -154,17 +155,17 @@
   <!-- HEADER -->
   <!-- ===================================================== -->
 
-  <header
+<header
   id="inicio"
   class="relative min-h-screen overflow-hidden bg-[#14080d]"
 >
-  <!-- FONDO -->
   <div
-    class="absolute inset-0 bg-cover bg-center scale-105"
+    class="absolute inset-0 bg-no-repeat 
+           bg-cover bg-[position:80%_center] scale-100
+           lg:bg-center lg:scale-105"
     style="background-image:url('/img/portada2.png')"
   ></div>
 
-  <!-- OVERLAY MÁS OSCURO -->
   <div
     class="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,5,7,0.96)_0%,rgba(20,10,15,0.92)_20%,rgba(38,18,25,0.82)_42%,rgba(62,28,40,0.58)_68%,rgba(120,70,85,0.18)_88%,rgba(255,255,255,0)_100%)]"
   ></div>
@@ -174,18 +175,18 @@
     class="absolute top-[-180px] left-[-120px] w-[500px] h-[500px] rounded-full bg-[#f6d98d]/10 blur-[120px]"
   ></div>
 
-  <!-- CHOCOLATE ARRIBA -->
+  <!-- DECORACION SUPERIOR -->
   <img
-    src="/img/choco-top.png"
+    src="/img/portada2.png"
     alt=""
-    class="absolute top-0 right-0 w-[320px] z-[3] pointer-events-none opacity-80"
+    class="absolute top-0 right-0 w-[320px] z-[3] pointer-events-none opacity-30 object-cover object-left-bottom rounded-bl-[120px]"
   />
 
-  <!-- CHOCOLATE ABAJO -->
+  <!-- DECORACION INFERIOR -->
   <img
-    src="/img/choco-bottom.png"
+    src="/img/fondo2.png"
     alt=""
-    class="absolute bottom-0 left-0 w-[300px] rotate-180 z-[3] pointer-events-none opacity-80"
+    class="absolute bottom-0 left-0 w-[300px] z-[3] pointer-events-none opacity-20 object-cover object-right-top rounded-tr-[120px]"
   />
 
   <!-- PARTICULAS -->
@@ -208,30 +209,11 @@
       class="absolute top-[66%] left-[64%] w-1.5 h-1.5 rounded-full bg-[#F6D983] shadow-[0_0_20px_rgba(255,220,120,0.9)] animate-float [animation-delay:3s]"
     ></span>
 
-    <!-- PETALOS -->
-    <img
-      src="/img/petal.png"
-      class="petal-fall left-[5%] w-8 opacity-70"
-      style="animation-duration:12s; animation-delay:0s;"
-    />
-
-    <img
-      src="/img/petal.png"
-      class="petal-fall left-[15%] w-6 opacity-60"
-      style="animation-duration:16s; animation-delay:3s;"
-    />
-
-    <img
-      src="/img/petal.png"
-      class="petal-fall left-[28%] w-10 opacity-80"
-      style="animation-duration:14s; animation-delay:1s;"
-    />
-
-    <img
-      src="/img/petal.png"
-      class="petal-fall left-[40%] w-7 opacity-50"
-      style="animation-duration:18s; animation-delay:5s;"
-    />
+    <!-- PETALOS (SVG inline) -->
+    <svg class="petal-fall absolute left-[5%] w-8 opacity-70" style="animation-duration:12s; animation-delay:0s;" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="30" rx="12" ry="22" fill="#f6b8d0" opacity="0.85" transform="rotate(-15 20 30)"/></svg>
+    <svg class="petal-fall absolute left-[15%] w-6 opacity-60" style="animation-duration:16s; animation-delay:3s;" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="30" rx="12" ry="22" fill="#f9cfe0" opacity="0.8" transform="rotate(10 20 30)"/></svg>
+    <svg class="petal-fall absolute left-[28%] w-10 opacity-80" style="animation-duration:14s; animation-delay:1s;" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="30" rx="12" ry="22" fill="#f6b8d0" opacity="0.9" transform="rotate(-25 20 30)"/></svg>
+    <svg class="petal-fall absolute left-[40%] w-7 opacity-50" style="animation-duration:18s; animation-delay:5s;" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="30" rx="12" ry="22" fill="#fbd5e8" opacity="0.75" transform="rotate(5 20 30)"/></svg>
   </div>
 
   <!-- CONTENIDO -->
@@ -301,349 +283,351 @@
       </div>
     </div>
 
-    <!-- IMAGENES -->
-    <div class="relative min-h-[760px] hidden lg:block">
-
-      <!-- GLOW -->
-      <div
-        class="absolute w-[560px] h-[560px] rounded-full bg-[radial-gradient(circle,rgba(255,240,220,0.32),transparent_70%)] top-[20px] right-[0px] blur-[10px]"
-      ></div>
-
-      <!-- PLATO SUPERIOR -->
-      <img
-        src="/img/plato-superior.png"
-        alt=""
-        class="absolute top-[10px] right-[60px] w-[500px] animate-productFloat drop-shadow-[0_35px_45px_rgba(0,0,0,0.38)]"
-      />
-
-      <!-- PLATO INFERIOR -->
-      <img
-        src="/img/plato-inferior.png"
-        alt=""
-        class="absolute bottom-[10px] right-[0px] w-[560px] drop-shadow-[0_35px_45px_rgba(0,0,0,0.35)]"
-      />
-
-      <!-- CHOCOLATE -->
-      <img
-        src="/img/chocolate-single.png"
-        alt=""
-        class="absolute bottom-[110px] left-[10px] w-[180px] drop-shadow-[0_25px_35px_rgba(0,0,0,0.4)]"
-      />
-
-      <!-- CAJA -->
-      <img
-        src="/img/caja-corazones.png"
-        alt=""
-        class="absolute bottom-[-10px] right-[-30px] w-[240px] rotate-[-8deg] drop-shadow-[0_25px_40px_rgba(0,0,0,0.38)]"
-      />
+    
     </div>
   </div>
 </header>
 
   <section
-    class="relative py-20 border-y border-[#f0e6d8] bg-cover bg-center bg-no-repeat"
-    style="background-image: url('/img/fondo1.png');"
-  >
-    <div class="absolute inset-0 bg-[#fcfaf8]/80"></div>
+      class="relative py-24 border-y border-[#f0e6d8] bg-cover bg-center bg-no-repeat overflow-hidden"
+      style="background-image: url('/img/fondo1.png');"
+    >
+      <div class="absolute inset-0 bg-[#fcfaf8]/85"></div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl md:text-5xl font-serif text-[#4a3b32] leading-tight font-bold tracking-wide"
-        >
-          Porque Mamá merece <span class="italic text-rose-800 font-bold"
-            >más que palabras.</span
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-serif text-[#4a3b32] leading-tight font-bold tracking-wide"
           >
-        </h2>
-        <div class="h-px w-24 bg-[#e8dccb] mx-auto mt-4"></div>
-        <p class="text-rose-700 mt-4 text-xl">Detalles que emocionan</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
-        <div
-          class="group relative bg-[#fbf8f3] rounded-3xl p-10 border border-[#d4c4b7] shadow-[0_8px_30px_rgb(251,207,232,0.3)] hover:shadow-[0_8px_40px_rgb(251,207,232,0.6)] transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-tr from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
-          >
-          </div>
-
-          <div class="relative z-10 flex-grow flex flex-col">
-            <div
-              class="w-48 h-48 mx-auto mb-6 bg-pink-50/50 rounded-full flex items-center justify-center relative overflow-hidden"
+            Porque Mamá merece <span class="italic text-rose-800 font-bold"
+              >más que palabras.</span
             >
-              <div
-                class="relative z-10 text-xs tracking-widest uppercase text-rose-300"
-              >
-                <img src="/img/razon1.png" alt="" />
-              </div>
+          </h2>
+          <div class="h-px w-24 bg-[#e8dccb] mx-auto mt-4"></div>
+          <p class="text-rose-700 mt-4 text-xl">Detalles que emocionan</p>
+        </div>
+        <div class="hidden md:grid md:grid-cols-4 gap-6">
+          <div
+            class="bg-[#fbf8f3] rounded-3xl py-12 px-8 border border-[#d4c4b7] shadow-lg flex flex-col items-center text-center"
+          >
+            <div class="w-full h-44 mb-6 flex items-center justify-center">
+              <img
+                src="/img/razon1.png"
+                alt="Icono 1"
+                class="h-full object-contain"
+              />
             </div>
-            <h3 class="text-2xl font-serif text-[#4a3b32] mb-3 font-bold">
+            <h3 class="text-xl font-serif text-[#4a3b32] font-bold mb-3">
               Regalos que emocionan
             </h3>
-            <p
-              class="text-sm text-gray-500 leading-relaxed gray-600 mb-6 flex-grow"
-            >
-              Texturas suaves y premium con destellos de absoluta elegancia <span
-                class="cite-style text-rose-800 font-medium italic"></span>.
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">
+              Texturas suaves y premium con destellos de absoluta elegancia.
             </p>
           </div>
-        </div>
 
-        <div
-          class="group relative bg-[#fbf8f3] rounded-3xl p-10 border border-[#d4c4b7] shadow-[0_8px_30px_rgb(251,207,232,0.3)] hover:shadow-[0_8px_40px_rgb(251,207,232,0.6)] transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
-        >
           <div
-            class="absolute inset-0 bg-gradient-to-tr from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
+            class="bg-[#fbf8f3] rounded-3xl py-12 px-8 border border-[#d4c4b7] shadow-lg flex flex-col items-center text-center"
           >
-          </div>
-          <div class="relative z-10 flex-grow flex flex-col">
-            <div
-              class="w-48 h-48 mx-auto mb-6 bg-pink-50/50 rounded-full flex items-center justify-center relative overflow-hidden"
-            >
-              <div
-                class="relative z-10 text-xs tracking-widest uppercase text-rose-300"
-              >
-                <img src="/img/razon2.png" alt="" />
-              </div>
+            <div class="w-full h-44 mb-6 flex items-center justify-center">
+              <img
+                src="/img/razon2.png"
+                alt="Icono 2"
+                class="h-full object-contain"
+              />
             </div>
-            <h3 class="text-2xl font-serif text-[#4a3b32] mb-3 font-bold">
+            <h3 class="text-xl font-serif text-[#4a3b32] font-bold mb-3">
               Chocolate premium
             </h3>
-            <p
-              class="text-sm text-gray-500 leading-relaxed gray-600 mb-6 flex-grow"
-            >
-              Calidad y exclusividad a la altura de las mejores marcas del mundo <span
-                class="cite-style text-rose-800 font-medium italic"></span>.
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">
+              Calidad y exclusividad a la altura de las mejores marcas del
+              mundo.
             </p>
           </div>
-        </div>
 
-        <div
-          class="group relative bg-[#fbf8f3] rounded-3xl p-10 border border-[#d4c4b7] shadow-[0_8px_30px_rgb(251,207,232,0.3)] hover:shadow-[0_8px_40px_rgb(251,207,232,0.6)] transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
-        >
           <div
-            class="absolute inset-0 bg-gradient-to-tr from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
+            class="bg-[#fbf8f3] rounded-3xl py-12 px-8 border border-[#d4c4b7] shadow-lg flex flex-col items-center text-center"
           >
-          </div>
-          <div class="relative z-10 flex-grow flex flex-col">
-            <div
-              class="w-48 h-48 mx-auto mb-6 bg-pink-50/50 rounded-full flex items-center justify-center relative overflow-hidden"
-            >
-              <div
-                class="relative z-10 text-xs tracking-widest uppercase text-rose-300"
-              >
-                <img src="/img/razon3.png" alt="" />
-              </div>
+            <div class="w-full h-44 mb-6 flex items-center justify-center">
+              <img
+                src="/img/razon3.png"
+                alt="Icono 3"
+                class="h-full object-contain"
+              />
             </div>
-            <h3 class="text-2xl font-serif text-[#4a3b32] mb-3 font-bold">
+            <h3 class="text-xl font-serif text-[#4a3b32] font-bold mb-3">
               Presentaciones elegantes
             </h3>
-            <p
-              class="text-sm text-gray-500 leading-relaxed gray-600 mb-6 flex-grow"
-            >
-              Empaques finamente diseñados que convierten la caja en una joya <span
-                class="cite-style text-rose-800 font-medium italic"></span>.
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">
+              Empaques finamente diseñados que convierten la caja en una joya.
             </p>
           </div>
-        </div>
 
-        <div
-          class="group relative bg-[#fbf8f3] rounded-3xl p-10 border border-[#d4c4b7] shadow-[0_8px_30px_rgb(251,207,232,0.3)] hover:shadow-[0_8px_40px_rgb(251,207,232,0.6)] transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
-        >
           <div
-            class="absolute inset-0 bg-gradient-to-tr from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
+            class="bg-[#fbf8f3] rounded-3xl py-12 px-8 border border-[#d4c4b7] shadow-lg flex flex-col items-center text-center"
           >
-          </div>
-          <div class="relative z-10 flex-grow flex flex-col">
-            <div
-              class="w-48 h-48 mx-auto mb-6 bg-pink-50/50 rounded-full flex items-center justify-center relative overflow-hidden"
-            >
-              <div
-                class="relative z-10 text-xs tracking-widest uppercase text-rose-300"
-              >
-                <img src="/img/razon4.png" alt="" />
-              </div>
+            <div class="w-full h-44 mb-6 flex items-center justify-center">
+              <img
+                src="/img/razon4.png"
+                alt="Icono 4"
+                class="h-full object-contain"
+              />
             </div>
-            <h3 class="text-2xl font-serif text-[#4a3b32] mb-3 font-bold">
+            <h3 class="text-xl font-serif text-[#4a3b32] font-bold mb-3">
               Momentos inolvidables
             </h3>
-            <p
-              class="text-sm text-gray-500 leading-relaxed gray-600 mb-6 flex-grow"
-            >
-              Más que un producto, creamos recuerdos que perduran en el tiempo <span
-                class="cite-style text-rose-800 font-medium italic"></span>.
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">
+              Más que un producto, creamos recuerdos que perduran en el tiempo.
             </p>
           </div>
         </div>
+        <div class="md:hidden flex flex-col gap-16 mt-0">
+          <div
+            class="flex flex-row items-center bg-[#f9f1f4] rounded-2xl shadow-md animate-right relative"
+          >
+            <div class="-my-12 w-40 flex-shrink-0 z-20">
+              <img
+                src="/img/razon1.png"
+                alt="Imagen 1"
+                class="w-full h-full object-contain drop-shadow-xl"
+              />
+            </div>
+            <div class="py-6 pr-6 pl-2">
+              <h3 class="font-serif text-[#4a3b32] font-bold text-sm mb-1">
+                Regalos que emocionan
+              </h3>
+              <p class="text-[11px] text-gray-600 leading-tight">
+                Texturas suaves y premium con destellos de elegancia.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row-reverse items-center bg-[#f9f1f4] rounded-2xl shadow-md animate-right relative"
+          >
+            <div class="-my-12 w-40 flex-shrink-0 z-20">
+              <img
+                src="/img/razon2.png"
+                alt="Imagen 2"
+                class="w-full h-full object-contain drop-shadow-xl"
+              />
+            </div>
+            <div class="py-6 pl-6 pr-2 text-right">
+              <h3 class="font-serif text-[#4a3b32] font-bold text-sm mb-1">
+                Chocolate premium
+              </h3>
+              <p class="text-[11px] text-gray-600 leading-tight">
+                Calidad y exclusividad a la altura mundial.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row items-center bg-[#f9f1f4] rounded-2xl shadow-md animate-right relative"
+          >
+            <div class="-my-12 w-40 flex-shrink-0 z-20">
+              <img
+                src="/img/razon3.png"
+                alt="Imagen 3"
+                class="w-full h-full object-contain drop-shadow-xl"
+              />
+            </div>
+            <div class="py-6 pr-6 pl-2">
+              <h3 class="font-serif text-[#4a3b32] font-bold text-sm mb-1">
+                Presentaciones elegantes
+              </h3>
+              <p class="text-[11px] text-gray-600 leading-tight">
+                Empaques que convierten la caja en una joya.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row-reverse items-center bg-[#f9f1f4] rounded-2xl shadow-md animate-right relative"
+          >
+            <div class="-my-12 w-40 flex-shrink-0 z-20">
+              <img
+                src="/img/razon4.png"
+                alt="Imagen 4"
+                class="w-full h-full object-contain drop-shadow-xl"
+              />
+            </div>
+            <div class="py-6 pl-6 pr-2 text-right">
+              <h3 class="font-serif text-[#4a3b32] font-bold text-sm mb-1">
+                Momentos inolvidables
+              </h3>
+              <p class="text-[11px] text-gray-600 leading-tight">
+                Recuerdos que perduran en el tiempo.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Pinyon+Script&display=swap");
-    .font-elegante {
-      font-family: "Playfair Display", serif;
-    }
-    .font-cursiva {
-      font-family: "Pinyon Script", cursive;
-    }
-  </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Pinyon+Script&display=swap");
+      .font-elegante {
+        font-family: "Playfair Display", serif;
+      }
+      .font-cursiva {
+        font-family: "Pinyon Script", cursive;
+      }
+    </style>
 
-  <section
-    id="elegancia"
-    class="py-14 md:py-20 border-y border-[#5e2d3b] bg-cover bg-center bg-no-repeat relative overflow-hidden"
-    style="background-image: url('/img/fondo2.png');"
-  >
-    <!-- overlay -->
-    <div
-      class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,10,16,0.78),rgba(44,18,28,0.70),rgba(20,8,12,0.82))]"
+    <section
+      id="elegancia"
+      class="py-14 md:py-20 border-y border-[#5e2d3b] bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      style="background-image: url('/img/fondo2.png');"
     >
-    </div>
-
-    <div class="max-w-6xl mx-auto px-5 relative z-10">
-      <!-- TITULO -->
-      <div class="text-center mb-12">
-        <h2
-          class="text-4xl md:text-5xl font-elegante text-[#fff7f8] mb-2 tracking-tight"
-        >
-          Elegancia para sorprender
-        </h2>
-
-        <p
-          class="font-cursiva text-[#f6d98d] text-2xl md:text-3xl tracking-wide"
-        >
-          No le regales cualquier cosa... regálale un momento.
-        </p>
+      <!-- overlay -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,10,16,0.78),rgba(44,18,28,0.70),rgba(20,8,12,0.82))]"
+      >
       </div>
 
-      <!-- CARDS -->
-      <div class="flex flex-col gap-7 max-w-5xl mx-auto">
-        <!-- CARD 1 -->
-        <div
-          class="bg-[rgba(45,20,28,0.42)] backdrop-blur-sm rounded-[2rem] border border-[rgba(255,255,255,0.08)] shadow-[0_10px_35px_rgba(0,0,0,0.30)] flex flex-col md:flex-row overflow-hidden group transition-all duration-500"
-        >
-          <!-- IMAGEN -->
-          <div
-            class="md:w-[42%] p-6 md:p-7 flex items-center justify-center relative overflow-hidden"
+      <div class="max-w-6xl mx-auto px-5 relative z-10">
+        <!-- TITULO -->
+        <div class="text-center mb-12">
+          <h2
+            class="text-4xl md:text-5xl font-elegante text-[#fff7f8] mb-2 tracking-tight"
           >
+            Elegancia para sorprender
+          </h2>
+
+          <p
+            class="font-cursiva text-[#f6d98d] text-2xl md:text-3xl tracking-wide"
+          >
+            No le regales cualquier cosa... regálale un momento.
+          </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="flex flex-col gap-6 max-w-5xl mx-auto">
+          <!-- CARD 1 -->
+          <div
+            class="bg-[rgba(45,20,28,0.42)] backdrop-blur-sm rounded-[2rem] border border-[rgba(255,255,255,0.08)] shadow-[0_10px_35px_rgba(0,0,0,0.30)] flex flex-col md:flex-row overflow-hidden group transition-all duration-500"
+          >
+            <!-- IMAGEN -->
             <div
-              class="absolute w-52 h-52 bg-[#f6d98d]/10 rounded-full blur-3xl opacity-70"
+              class="md:w-[42%] p-6 md:p-7 flex items-center justify-center relative overflow-hidden"
             >
+              <div
+                class="absolute w-52 h-52 bg-[#f6d98d]/10 rounded-full blur-3xl opacity-70"
+              >
+              </div>
+
+              <img
+                src="/img/especial1.png"
+                alt="Caja Madre Rosada"
+                class="object-contain w-full h-full max-h-56 relative z-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
-            <img
-              src="/img/especial1.png"
-              alt="Caja Madre Rosada"
-              class="object-contain w-full h-full max-h-56 relative z-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] group-hover:scale-105 transition-transform duration-500"
-            />
+            <!-- TEXTO -->
+            <div class="md:w-[58%] p-6 md:p-8 flex flex-col justify-center">
+              <h3
+                class="text-4xl md:text-5xl font-elegante font-bold text-[#fff7f8] mb-3"
+              >
+                Bs. 72
+              </h3>
+
+              <h4
+                class="text-xl md:text-2xl font-bold text-[#f6d98d] mb-2 font-elegante"
+              >
+                Caja Madre Rosada
+                <span class="font-normal text-[#f8e8ec] text-base font-sans">
+                  250g
+                </span>
+              </h4>
+
+              <p class="text-[#fff0f2] italic text-sm mb-3">
+                "Eres una mamá increíble"
+              </p>
+
+              <p class="text-[#d6c4ca] text-sm leading-relaxed mb-6">
+                Más que chocolate... una forma elegante de decir "gracias".
+              </p>
+
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] text-[#fff7f8] text-[11px] px-4 py-2 rounded-full"
+                >
+                  Detalle Premium
+                </span>
+
+                <button
+                  class="bg-[#f6d98d] hover:bg-[#f0cb69] text-[#3a1823] text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 shadow-md"
+                >
+                  Comprar
+                  <span class="text-base leading-none">&rarr;</span>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- TEXTO -->
-          <div class="md:w-[58%] p-6 md:p-8 flex flex-col justify-center">
-            <h3
-              class="text-4xl md:text-5xl font-elegante font-bold text-[#fff7f8] mb-3"
+          <!-- CARD 2 -->
+          <div
+            class="bg-[rgba(45,20,28,0.42)] backdrop-blur-sm rounded-[2rem] border border-[rgba(255,255,255,0.08)] shadow-[0_10px_35px_rgba(0,0,0,0.30)] flex flex-col md:flex-row-reverse overflow-hidden group transition-all duration-500"
+          >
+            <!-- IMAGEN -->
+            <div
+              class="md:w-[42%] p-6 md:p-7 md:pr-24 flex items-center justify-center relative overflow-hidden"
             >
-              Bs. 72
-            </h3>
-
-            <h4
-              class="text-xl md:text-2xl font-bold text-[#f6d98d] mb-2 font-elegante"
-            >
-              Caja Madre Rosada
-              <span class="font-normal text-[#f8e8ec] text-base font-sans">
-                250g
-              </span>
-            </h4>
-
-            <p class="text-[#fff0f2] italic text-sm mb-3">
-              "Eres una mamá increíble"
-            </p>
-
-            <p class="text-[#d6c4ca] text-sm leading-relaxed mb-6">
-              Más que chocolate... una forma elegante de decir "gracias".
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <span
-                class="bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] text-[#fff7f8] text-[11px] px-4 py-2 rounded-full"
+              <div
+                class="absolute w-52 h-52 bg-[#f6d98d]/10 rounded-full blur-3xl opacity-70"
               >
-                Detalle Premium
-              </span>
+              </div>
 
-              <button
-                class="bg-[#f6d98d] hover:bg-[#f0cb69] text-[#3a1823] text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 shadow-md"
+              <img
+                src="/img/prom2.png"
+                alt="Caja Cartón Corazón"
+                class="object-contain w-full h-full max-h-56 relative z-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <!-- TEXTO -->
+            <div class="md:w-[58%] p-6 md:p-8 md:px-24 flex flex-col">
+              <h3
+                class="text-4xl md:text-5xl font-elegante font-bold text-[#fff7f8] mb-3"
               >
-                Comprar
-                <span class="text-base leading-none">&rarr;</span>
-              </button>
+                Bs. 21.5
+              </h3>
+              <h4
+                class="text-xl md:text-2xl font-bold text-[#f6d98d] mb-2 font-elegante"
+              >
+                Caja Cartera
+                <span class="font-normal text-[#f8e8ec] text-base font-sans">
+                  100g
+                </span>
+              </h4>
+
+              <p class="text-[#fff0f2] italic text-sm mb-3">
+                "Para la reina de la casa"
+              </p>
+
+              <p class="text-[#d6c4ca] text-sm leading-relaxed mb-6">
+                Un detalle delicado, elegante y lleno de cariño.
+              </p>
+
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] text-[#fff7f8] text-[11px] px-4 py-2 rounded-full"
+                >
+                  Exclusivo
+                </span>
+
+                <button
+                  class="bg-[#f6d98d] hover:bg-[#f0cb69] text-[#3a1823] text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 shadow-md"
+                >
+                  Comprar
+                  <span class="text-base leading-none">&rarr;</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- CARD 2 -->
-        <div
-          class="bg-[rgba(45,20,28,0.42)] backdrop-blur-sm rounded-[2rem] border border-[rgba(255,255,255,0.08)] shadow-[0_10px_35px_rgba(0,0,0,0.30)] flex flex-col md:flex-row-reverse overflow-hidden group transition-all duration-500"
-        >
-          <!-- IMAGEN -->
-          <div
-            class="md:w-[42%] p-6 md:p-7 flex items-center justify-center relative overflow-hidden"
-          >
-            <div
-              class="absolute w-52 h-52 bg-[#f6d98d]/10 rounded-full blur-3xl opacity-70"
-            >
-            </div>
-
-            <img
-              src="/img/especial2.png"
-              alt="Caja Cartón Corazón"
-              class="object-contain w-full h-full max-h-56 relative z-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-
-          <!-- TEXTO -->
-          <div class="md:w-[58%] p-6 md:p-8 flex flex-col justify-center">
-            <h3
-              class="text-4xl md:text-5xl font-elegante font-bold text-[#fff7f8] mb-3"
-            >
-              Bs. 21.5
-            </h3>
-            <h4
-              class="text-xl md:text-2xl font-bold text-[#f6d98d] mb-2 font-elegante"
-            >
-              Caja Cartera
-              <span class="font-normal text-[#f8e8ec] text-base font-sans">
-                100g
-              </span>
-            </h4>
-
-            <p class="text-[#fff0f2] italic text-sm mb-3">
-              "Para la reina de la casa"
-            </p>
-
-            <p class="text-[#d6c4ca] text-sm leading-relaxed mb-6">
-              Un detalle delicado, elegante y lleno de cariño.
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <span
-                class="bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] text-[#fff7f8] text-[11px] px-4 py-2 rounded-full"
-              >
-                Exclusivo
-              </span>
-
-              <button
-                class="bg-[#f6d98d] hover:bg-[#f0cb69] text-[#3a1823] text-xs font-bold px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 shadow-md"
-              >
-                Comprar
-                <span class="text-base leading-none">&rarr;</span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section
     id="cajas-especiales"
