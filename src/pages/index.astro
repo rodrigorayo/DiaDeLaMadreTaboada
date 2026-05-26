@@ -1440,12 +1440,48 @@
   </div>
 </footer>
     <script>
+      const cleanText = (str) => str ? str.trim().replace(/\s+/g, ' ') : '';
+
       document.addEventListener('DOMContentLoaded', () => {
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
           if (button.textContent.toLowerCase().includes('comprar') || button.textContent.toLowerCase().includes('sorprender')) {
             button.addEventListener('click', () => {
-              window.open('https://wa.me/59179786916?text=Hola,%20quiero%20comprar%20un%20regalo%20para%20mam%C3%A1', '_blank');
+              let productName = "";
+              let productPrice = "";
+              
+              const card = button.closest('.group');
+              if (card) {
+                const h4 = card.querySelector('h4');
+                const h3 = card.querySelector('h3');
+                if (h4) {
+                  productName = cleanText(h4.textContent);
+                  productPrice = h3 ? cleanText(h3.textContent) : "";
+                } else if (h3) {
+                  productName = cleanText(h3.textContent);
+                  
+                  const allTextElements = Array.from(card.querySelectorAll('p, span, div, h3'));
+                  const priceElement = allTextElements.find(el => {
+                    const txt = el.textContent.trim().toLowerCase();
+                    return txt.startsWith('bs.') || txt.includes('bs. ') || txt.startsWith('bs ') || txt.includes(' bs. ') || txt.startsWith('bs\n');
+                  });
+                  if (priceElement) {
+                    productPrice = cleanText(priceElement.textContent);
+                  }
+                }
+              }
+              
+              let message = 'Hola, quiero comprar un regalo para mamá';
+              if (productName) {
+                if (productPrice) {
+                  message = `Hola, quiero comprar: ${productName} (${productPrice})`;
+                } else {
+                  message = `Hola, quiero comprar: ${productName}`;
+                }
+              }
+              
+              const encodedMessage = encodeURIComponent(message);
+              window.open(`https://wa.me/59179786916?text=${encodedMessage}`, '_blank');
             });
           }
         });
